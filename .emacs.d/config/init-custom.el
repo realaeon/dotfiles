@@ -1,0 +1,21 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-backends
+   (quote
+    (company-irony company-bbdb company-dabbrev-code company-css company-eclim company-semantic company-abbrev company-c-headers company-xcode company-cmake company-capf company-files
+		   (company-dabbrev-code company-gtags company-etags company-keywords)
+		   company-oddmuse company-dabbrev)))
+ '(company-idle-delay 0.07)
+ '(company-minimum-prefix-length 1)
+ '(custom-safe-themes
+   (quote
+    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

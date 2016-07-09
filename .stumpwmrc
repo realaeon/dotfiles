@@ -1,0 +1,46 @@
+;; -*-lisp-*-
+(in-package :stumpwm)
+(setf *startup-message* nil)
+(set-focus-color :gray)
+
+(add-to-load-path "~/stumpwm/contrib/modeline/battery-portable/")
+(add-to-load-path "~/stumpwm/contrib/modeline/wifi/")
+
+(loop for file in '(  "wifi" "battery-portable")
+        do (load-module file))
+
+;(load "~/stumpwm/cpu.lisp")
+
+;(setf *group-format* "%s [%n] %t ")
+(setf *window-format* "%m%n%s%c")
+(setq *window-border-style* :thin)
+(setf *mouse-focus-policy* :click)
+(stumpwm:define-key stumpwm:*top-map* (stumpwm:kbd "XF86AudioRaiseVolume") "exec amixer set Master,0 4%+")
+(stumpwm:define-key stumpwm:*top-map* (stumpwm:kbd "XF86AudioLowerVolume") "exec amixer set Master,0 4%-")
+;(stumpwm:define-key stumpwm:*top-map* (stumpwm:kbd "XF86AudioMute") "exec amixer set Master toggle")
+
+(defcommand chromium () ()
+	    "run chromium"
+	    (run-or-raise "chromium" '(:instance "chromium")))
+(define-key *root-map* (kbd "f") "chromium")
+(defcommand emacs () ()
+	    "run emacs"
+	    (run-or-raise "emacs" '(:instance "emacs")))
+(define-key *root-map* (kbd "e") "emacs")
+
+;; Turn on the modeline
+(if (not (head-mode-line (current-head)))
+    (toggle-mode-line (current-screen) (current-head)))
+
+
+;; Show time, cpu usage and network traffic in the modeline
+(setf *screen-mode-line-format*
+      (list '(:eval (run-shell-command "date '+%R, %F %a'|tr -d [:cntrl:]" t))
+	    " | %B | %I | [^B%n^b] %W"))
+
+;; frame selection
+(define-key *root-map* (kbd "o") "fselect")
+
+;(run-shell-command "kmix")
+
+
