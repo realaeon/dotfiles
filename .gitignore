@@ -2,8 +2,11 @@
 !.gitignore
 !.stumpwmrc
 !.xprofile
-!.Xmodmap
+!.xmodmaprc
 !.Xresoucres
 !.bashrc
 !.asoundrc
+!.emacs.d/config/*
+!.emacs.d/init.el
+
 

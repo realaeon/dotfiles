@@ -2,15 +2,14 @@
 (require 'package)
 
 ;(add-to-list 'package-archives '("melpa-cn" . "http://elpa.codefalling.com/melpa/"))
-(setq package-archives
-      '(("gnu-cn" . "http://elpa.codefalling.com/gnu/")
-	("org-cn" . "http://elpa.codefalling.com/org/")
-	("melpa-cn" . "http://elpa.codefalling.com/melpa/")))
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 (defvar mypackages '(company
 		     company-irony-c-headers
 		     irony
 		     company-irony
+		     ;company-jedi
 		     dash
 		     monokai-theme
 		     jdee
@@ -25,6 +24,7 @@
 		     ;rtags
 		     ;company-rtags
 		     helm-gtags
+		     markdown-mode
 		     ) "Default packages")
 (defun mypackages-installed-p()
   (cl-loop for pkg in mypackages
@@ -39,6 +39,19 @@
 
 ;;python
 (elpy-enable)
+;;elpy fix
+;(elpy-use-ipython ''ipython3)
+(defun python-shell-completion-native-try ()
+  "Return non-nil if can trigger native completion."
+  (with-eval-after-load 'python
+    (let ((python-shell-completion-native-enable t)
+	  (python-shell-completion-native-output-timeout
+	   python-shell-completion-native-try-output-timeout))
+      (python-shell-completion-native-get-completions
+       (get-buffer-process (current-buffer))
+       nil "_")))
+  )
+
 
 ;;theme
 (load-theme 'monokai t)
@@ -68,6 +81,7 @@
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
+
 ;;irony
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)

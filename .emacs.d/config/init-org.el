@@ -7,5 +7,7 @@
 (setq org-src-fontify-natively t)
 ;capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 
 (provide 'init-org)

@@ -1,6 +1,6 @@
 (package-initialize)
 
-;;open init file
+;;open init fil
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/config/init-packages.el"))

@@ -12,7 +12,13 @@
  '(company-minimum-prefix-length 1)
  '(custom-safe-themes
    (quote
-    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" default))))
+    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" default)))
+ '(elpy-modules
+   (quote
+    (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-sane-defaults)))
+ '(package-selected-packages
+   (quote
+    (company-jedi 0blayout smartparens monokai-theme jdee hungry-delete helm-gtags elpy counsel company-irony-c-headers company-irony cmake-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
