@@ -3,6 +3,11 @@
 
 ;;org mode highlight
 (setf org-src-fontify-natively t)
+(global-hl-line-mode t)
+
+;;enable mouse
+(require 'mouse)
+(xterm-mouse-mode t)
 
 ;;c intent
 (setq-default c-basic-offset 4)
@@ -14,6 +19,9 @@
 
 ;(global-linum-mode 1)
 (add-hook 'prog-mode-hook 'global-linum-mode)
+
+;;To make system copy work with Emacs paste 
+(setq x-select-enable-clipboard t)
 
 ;;cedet
 (semantic-mode 1)

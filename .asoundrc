@@ -7,3 +7,4 @@ ctl.!default {
 	     type hw
 	     	  card PCH
 		  }
+defaults.pcm.rate_converter "speexrate_best"

@@ -5,26 +5,25 @@
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
-(defvar mypackages '(company
+ (defvar mypackages '(company
 		     company-irony-c-headers
 		     irony
 		     company-irony
-		     ;company-jedi
-		     dash
-		     monokai-theme
-		     jdee
-		     hungry-delete
+		     ;;company-jedi
 		     swiper
 		     counsel
+		     dash
+		     monokai-theme
+
+		     hungry-delete
 		     smartparens
-		     helm
+
 		     cmake-mode
 		     ;;python ide
 		     elpy
-		     ;rtags
+		     jdee
+		     markdown-mode;rtags
 		     ;company-rtags
-		     helm-gtags
-		     markdown-mode
 		     ) "Default packages")
 (defun mypackages-installed-p()
   (cl-loop for pkg in mypackages
@@ -40,7 +39,8 @@
 ;;python
 (elpy-enable)
 ;;elpy fix
-;(elpy-use-ipython ''ipython3)
+(setq elpy-rpc-python-command "python2")
+;(elpy-use-ipython)
 (defun python-shell-completion-native-try ()
   "Return non-nil if can trigger native completion."
   (with-eval-after-load 'python
@@ -100,22 +100,6 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
 (require 'slime)
 (slime-setup)
-
-;;helm
-(setq
- helm-gtags-ignore-case t
- helm-gtags-auto-update t
- helm-gtags-use-input-at-cursor t
- helm-gtags-pulse-at-cursor t
- helm-gtags-prefix-key "\C-cg"
- helm-gtags-suggested-key-mapping t)
-(require 'helm-gtags)
-(add-hook 'dired-mode-hook 'helm-gtags-mode)
-(add-hook 'eshell-mode-hook 'helm-gtags-mode)
-(add-hook 'c-mode-hook 'helm-gtags-mode)
-(add-hook 'c++-mode-hook 'helm-gtags-mode)
-(add-hook 'asm-mode-hook 'helm-gtags-mode)
-
 
 
 
