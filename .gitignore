@@ -3,10 +3,9 @@
 !.stumpwmrc
 !.xprofile
 !.xmodmaprc
-!.Xresoucres
 !.bashrc
 !.asoundrc
 !.emacs.d/config/*
 !.emacs.d/init.el
-
+!.Xresources
 

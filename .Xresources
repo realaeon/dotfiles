@@ -1,0 +1,12 @@
+xterm.termName: xterm-256color
+XTerm*locale: true
+XTerm*metaSendsEscape: true
+xterm*faceName: Inconsolata
+xterm*faceSize:12
+XTerm*faceNameDoublesize:Monospace
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+		 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)	
+xterm*background: #282828
+xterm*foreground:  #F8F8F0	
+
