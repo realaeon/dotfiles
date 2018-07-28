@@ -18,7 +18,7 @@
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-sane-defaults)))
  '(package-selected-packages
    (quote
-    (company-jedi 0blayout smartparens monokai-theme jdee hungry-delete helm-gtags elpy counsel company-irony-c-headers company-irony cmake-mode)))
+    (org-pomodoro company-jedi 0blayout smartparens monokai-theme jdee hungry-delete helm-gtags elpy counsel company-irony-c-headers company-irony cmake-mode)))
  '(python-shell-interpreter "python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

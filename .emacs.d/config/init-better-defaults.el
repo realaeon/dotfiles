@@ -6,8 +6,8 @@
 (global-hl-line-mode t)
 
 ;;enable mouse
-(require 'mouse)
-(xterm-mouse-mode t)
+;(require 'mouse)
+;(xterm-mouse-mode t)
 
 ;;c intent
 (setq-default c-basic-offset 4)
